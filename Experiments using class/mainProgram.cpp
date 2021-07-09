@@ -10,7 +10,7 @@ int main()
     registerClient clientClass;
     showClient find_Client;
     std::string firstName, lastName;
-    long long int phoneNumber;
+    std::string phoneNumber;
     std::string phone_number;
     int choice=0,choice2=0;
     while(choice!=99)

@@ -5,10 +5,10 @@ class registerClient
 {
     private:
         std::string clientFirstName, clientLastName;
-        long long int clientNumber, temp;
+        std::string clientNumber, temp;
         void writeClientInformation();
     public:
-        void clientDetails(std::string firstName, std::string lastName, long long int number);
+        void clientDetails(std::string firstName, std::string lastName, std::string number);
 };
 
 #endif
