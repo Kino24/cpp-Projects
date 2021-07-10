@@ -17,6 +17,7 @@ int main()
     {
         std::cout<<"[1]Register, [2]Find Person/Show Client List, [99]Exit"<<std::endl;
         std::cin>>choice;
+        system("cls");
         if(choice==1)
         {
             std::cout<<"Enter first name, last name, and phone number(please use 09 format):"<<std::endl;
@@ -25,9 +26,9 @@ int main()
         }
         else if(choice==2)
         {
-            system("cls");
             std::cout<<"[1]Show Registrants List, [2]Find Registrant"<<std::endl;
             std::cin>>choice2;
+            system("cls");
             if(choice2==1)
                 find_Client.showClientList();
             else if(choice2==2)
@@ -37,7 +38,8 @@ int main()
                 find_Client.findClient(firstName,lastName,phone_number);
             }
             else
-                std::cout<<"Invalid Input!"<<std::endl; 
+                std::cout<<"Invalid Input!"<<std::endl;
+                system("pause"); 
         }
         system("cls");
     }

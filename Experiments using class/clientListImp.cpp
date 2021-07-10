@@ -9,10 +9,11 @@ void showClient::showClientList()
     while(clientInput.good())
     {
         clientInput>>first_name>>last_name>>phone_number>>week_day>>month>>day>>time>>year;
-        cout<<"Name: "<<first_name<<" "<<last_name<<endl
-            <<"Number: "<<phone_number<<endl
-            <<"Date Registered: "<<week_day<<" "<<month<<" "<<day<<" "<<year<<endl
-            <<"Time Registered: "<<time<<endl<<endl;
+        if(clientInput.good())
+            cout<<"Name: "<<first_name<<" "<<last_name<<endl
+                <<"Number: "<<phone_number<<endl
+                <<"Date Registered: "<<week_day<<" "<<month<<" "<<day<<" "<<year<<endl
+                <<"Time Registered: "<<time<<endl<<endl;
     }
     clientInput.close();
     system("pause");
@@ -27,6 +28,7 @@ void showClient::findClient(string firstName, string lastName, string phoneNumbe
         clientInput>>first_name>>last_name>>phone_number>>week_day>>month>>day>>time>>year;
         if(firstName==first_name&&lastName==last_name&&phoneNumber==phone_number)
         {
+            system("cls");
             cout<<"PERSON FOUND!"<<endl
                 <<"Name: "<<first_name<<" "<<last_name<<endl
                 <<"Number: "<<phone_number<<endl
@@ -38,8 +40,8 @@ void showClient::findClient(string firstName, string lastName, string phoneNumbe
         {
             system("cls");
             cout<<"Person not found"<<endl;
+            system("pause");
+            system("cls");
         }
     }
-    system("pause");
-    system("cls");
 }
