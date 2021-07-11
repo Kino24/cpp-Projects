@@ -33,13 +33,12 @@ int main()
                 find_Client.showClientList();
             else if(choice2==2)
             {
-                std::cout<<"Enter first name, last name, and phone number of person:"<<std::endl;
-                std::cin>>firstName>>lastName>>phone_number;
-                find_Client.findClient(firstName,lastName,phone_number);
+                std::cout<<"Enter first name, last name"<<std::endl;
+                std::cin>>firstName>>lastName;
+                find_Client.findClient(firstName,lastName);
             }
             else
-                std::cout<<"Invalid Input!"<<std::endl;
-                system("pause"); 
+                std::cout<<"Invalid Input!"<<std::endl; 
         }
         system("cls");
     }
