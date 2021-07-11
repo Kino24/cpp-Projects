@@ -1,0 +1,48 @@
+#include <iostream>
+#include <stdlib.h>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+    srand(time(0));
+    int player=0,blackJackDealer=0,initialBotValue=0;
+    string choice;
+    cout<<" type 'hit' to draw another card, and type 'stay' to attack"<<endl;
+    player += rand()%10+1;
+    blackJackDealer += rand()%10+1;
+    initialBotValue=blackJackDealer;
+    cout<<"Player: "<<player<<endl
+        <<"Dealer: "<<blackJackDealer<<endl;
+    while(choice!="stay")
+    {
+        cout<<"Enter Choice: ";
+        cin>>choice; cout<<endl;
+        if(choice=="hit")
+        {
+            player +=rand()%10+1;
+            if(rand()%1+1==1)
+                blackJackDealer+=rand()%10+1;
+            if(player>=21)
+                break;
+            cout<<"Player: "<<player<<endl
+                <<"Dealer: "<<initialBotValue<<endl;
+        }
+    }
+    cout<<"Player: "<<player<<endl
+        <<"Dealer: "<<blackJackDealer<<endl;
+    if(player>21&&blackJackDealer<=21)
+        cout<<"You lose! The Dealer wins!"<<endl;
+    else if(player<=21&&blackJackDealer<=21&&player>blackJackDealer)
+        cout<<"You win!"<<endl;
+    else if(player<=21&&blackJackDealer>21)
+        cout<<"You win!"<<endl;
+    else if(player<=21&&blackJackDealer<=21&&player<blackJackDealer)
+        cout<<"You lose! The Dealer wins!"<<endl;
+    else if(player>21&&blackJackDealer>21)
+        cout<<"No one wins!"<<endl;
+    else if(player==blackJackDealer)
+        cout<<"It is a tie!"<<endl;
+    
+    return 0;
+}
