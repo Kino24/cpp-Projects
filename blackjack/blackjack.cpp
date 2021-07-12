@@ -6,14 +6,14 @@ using namespace std;
 int main()
 {
     srand(time(0));
-    int player=0,blackJackDealer=0,initialBotValue=0;
+    int player=0,blackJackDealer=0,initialBotValue=0,cards=1;
     string choice;
     cout<<" type 'hit' to draw another card, and type 'stay' to attack"<<endl;
     player += rand()%10+1;
     blackJackDealer += rand()%10+1;
     initialBotValue=blackJackDealer;
     cout<<"Player: "<<player<<endl
-        <<"Dealer: "<<blackJackDealer<<endl;
+        <<"Dealer Initial Value: "<<blackJackDealer<<endl;
     while(choice!="stay")
     {
         cout<<"Enter Choice: ";
@@ -21,13 +21,16 @@ int main()
         if(choice=="hit")
         {
             player +=rand()%10+1;
-            if(rand()%1+1==1)
+            if(rand()%2+1==2||blackJackDealer<15)
                 blackJackDealer+=rand()%10+1;
             if(player>=21)
                 break;
             cout<<"Player: "<<player<<endl
-                <<"Dealer: "<<initialBotValue<<endl;
+                <<"Dealer Initial Value: "<<initialBotValue<<endl;
         }
+        if(cards==5)
+            break;
+        cards++;
     }
     cout<<"Player: "<<player<<endl
         <<"Dealer: "<<blackJackDealer<<endl;
