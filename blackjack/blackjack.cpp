@@ -9,11 +9,15 @@ int main()
     int player=0,blackJackDealer=0,initialBotValue=0,cards=1;
     string choice;
     cout<<" type 'hit' to draw another card, and type 'stay' to attack"<<endl;
-    player += rand()%10+1;
-    blackJackDealer += rand()%10+1;
-    initialBotValue=blackJackDealer;
+    for(int i=0; i<2; i++)
+    {
+        player += rand()%10+1;
+        blackJackDealer += rand()%10+1;
+        if(i==0)
+            initialBotValue=blackJackDealer;
+    }
     cout<<"Player: "<<player<<endl
-        <<"Dealer Initial Value: "<<blackJackDealer<<endl;
+        <<"Dealer Initial Value: "<<initialBotValue<<endl;
     while(choice!="stay")
     {
         cout<<"Enter Choice: ";
