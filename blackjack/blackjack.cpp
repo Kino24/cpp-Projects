@@ -24,6 +24,7 @@ int main()
         cin>>choice; cout<<endl;
         if(choice=="hit")
         {
+            cards++;
             player +=rand()%10+1;
             if(rand()%2+1==2||blackJackDealer<15)
                 blackJackDealer+=rand()%10+1;
@@ -34,7 +35,11 @@ int main()
         }
         if(cards==5)
             break;
-        cards++;
+    }
+    if(cards==1)
+    {
+        if(rand()%2+1==2||blackJackDealer<15)
+                blackJackDealer+=rand()%10+1;
     }
     cout<<"Player: "<<player<<endl
         <<"Dealer: "<<blackJackDealer<<endl;
