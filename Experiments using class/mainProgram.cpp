@@ -3,8 +3,6 @@
 #include "registerClient.h"
 #include "clientList.h"
 
-
-
 int main()
 {
     registerClient clientClass;
@@ -30,12 +28,12 @@ int main()
             std::cin>>choice2;
             system("cls");
             if(choice2==1)
-                find_Client.showClientList();
+                find_Client.showClientList(clientClass);
             else if(choice2==2)
             {
                 std::cout<<"Enter first name, last name"<<std::endl;
                 std::cin>>firstName>>lastName;
-                find_Client.findClient(firstName,lastName);
+                find_Client.findClient(clientClass, firstName, lastName);
             }
             else
                 std::cout<<"Invalid Input!"<<std::endl; 

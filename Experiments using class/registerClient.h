@@ -4,11 +4,16 @@
 class registerClient
 {
     private:
-        std::string clientFirstName, clientLastName;
-        std::string clientNumber, temp;
         void writeClientInformation();
+        void contactTracingQuestion();
+        void writeClientAddress();
     public:
+        std::string clientFirstName, clientLastName;
+        std::string clientNumber,question,answer;
+        char clientAddress[100];
+        int clientScore;
         void clientDetails(std::string firstName, std::string lastName, std::string number);
+        friend class clientList;
 };
 
 #endif
