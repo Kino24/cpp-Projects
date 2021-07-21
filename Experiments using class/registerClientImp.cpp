@@ -20,6 +20,7 @@ void registerClient::writeClientInformation()
     time_t now = time(0);
     char* dt = ctime(&now);
     ofstream outFile("dataFile.dat",ios::app);
+    registerClient::writeClientAddress();
     registerClient::contactTracingQuestion();
     outFile<<clientFirstName<<" "<<clientLastName<<" "<<clientNumber<<" "<<clientScore<<" "<<dt;
     outFile.close();
@@ -30,7 +31,7 @@ void registerClient::contactTracingQuestion()
     bool isCorrect;
     system("cls");
     clientScore=0;
-    cout<<"WARNING! typos will be considered 'YES'"<<endl<<"Answer 'YES' or 'NO'"<<endl;
+    cout<<"Answer 'YES' or 'NO'"<<endl;
     ifstream inFile("CONTACT_TRACING_QUESTIONS.txt");
     ifstream symptomFile("Symptoms.txt");
     while(inFile.good())
@@ -100,4 +101,13 @@ void registerClient::contactTracingQuestion()
     inFile.close();
     symptomFile.close();
     system("cls");
+}
+
+void registerClient::writeClientAddress()
+{
+    ofstream addressData("ADDRESS_DATA.dat",ios::app);
+    cin.ignore();
+    cout<<"Enter Address: ";
+    cin.getline(clientAddress, 99); cout<<endl;
+    addressData<<clientAddress<<endl;
 }

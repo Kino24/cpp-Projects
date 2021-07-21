@@ -7,9 +7,8 @@ int main()
 {
     registerClient clientClass;
     showClient find_Client;
-    std::string firstName, lastName;
-    std::string phoneNumber;
-    std::string phone_number;
+    char address[100];
+    std::string firstName, lastName, phoneNumber;
     int choice=0,choice2=0;
     while(choice!=99)
     {
@@ -18,7 +17,7 @@ int main()
         system("cls");
         if(choice==1)
         {
-            std::cout<<"Enter first name, last name, and phone number(please use 09 format):"<<std::endl;
+            std::cout<<"Enter first name, last name, and phone number:"<<std::endl;
             std::cin>>firstName>>lastName>>phoneNumber;
             clientClass.clientDetails(firstName,lastName,phoneNumber);
         }

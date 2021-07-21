@@ -7,9 +7,9 @@ class showClient
 {
     public:
         void showClientList(registerClient& show);
-        void findClient(registerClient& findClient, std::string first_name, std::string last_name);
+        void findClient(registerClient& find, std::string first_name, std::string last_name);
     private:
-        std::string week_day,month, time, year, day;
+        std::string week_day,month, time, year, day, address;
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
         friend class registerClient;
 };
