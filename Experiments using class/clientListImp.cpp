@@ -17,15 +17,17 @@ void showClient::showClientList(registerClient& show)
     cout<<"then the person is suspected for COVID-19"<<endl<<endl;
     while(clientInput.good()&&clientAddress.good())
     {
-        clientInput>>show.clientFirstName>>show.clientLastName>>show.clientNumber>>show.clientScore>>week_day>>month>>day>>time>>year;
+        clientInput>>show.clientFirstName>>show.clientLastName>>show.client_number>>show.clientScore>>show.clientAge>>show.clientSex>>week_day>>month>>day>>time>>year;
         getline(clientAddress,address);
         if(clientInput.good()&&clientAddress.good())
         {
-            if(show.clientScore>3)
+            if(show.clientScore>5)
             {
                 SetConsoleTextAttribute(hConsole, 12);
                 cout<<"Name: "<<show.clientFirstName<<" "<<show.clientLastName<<endl
-                <<"Number: "<<show.clientNumber<<endl
+                <<"Number: "<<show.client_number<<endl
+                <<"Sex: "<<show.clientSex<<endl
+                <<"Age: "<<show.clientAge<<endl
                 <<"Date Registered: "<<week_day<<" "<<month<<" "<<day<<" "<<year<<endl
                 <<"Time Registered: "<<time<<endl
                 <<"Address: "<<address<<endl;
@@ -34,11 +36,14 @@ void showClient::showClientList(registerClient& show)
             else
             {
                 cout<<"Name: "<<show.clientFirstName<<" "<<show.clientLastName<<endl
-                <<"Number: "<<show.clientNumber<<endl
+                <<"Number: "<<show.client_number<<endl
+                <<"Sex: "<<show.clientSex<<endl
+                <<"Age: "<<show.clientAge<<endl
                 <<"Date Registered: "<<week_day<<" "<<month<<" "<<day<<" "<<year<<endl
                 <<"Time Registered: "<<time<<endl
                 <<"Address: "<<address<<endl;
             }
+            cout<<endl;
         }
             
     }
@@ -53,16 +58,18 @@ void showClient::findClient(registerClient& find, string first_name, string last
     ifstream clientAddress("ADDRESS_DATA.dat");
     while(clientInput.good()&&clientAddress.good())
     {
-        clientInput>>find.clientFirstName>>find.clientLastName>>find.clientNumber>>find.clientScore>>week_day>>month>>day>>time>>year;
+        clientInput>>find.clientFirstName>>find.clientLastName>>find.client_number>>find.clientScore>>find.clientAge>>find.clientSex>>week_day>>month>>day>>time>>year;
         getline(clientAddress, address);
         if(find.clientFirstName==first_name&&find.clientLastName==last_name)
         {
             system("cls");
-            if(find.clientScore>3)
+            if(find.clientScore>5)
                 {
                     SetConsoleTextAttribute(hConsole, 12);
                     cout<<"Name: "<<find.clientFirstName<<" "<<find.clientLastName<<endl
-                    <<"Number: "<<find.clientNumber<<endl
+                    <<"Number: "<<find.client_number<<endl
+                    <<"Sex: "<<find.clientSex<<endl
+                    <<"Age: "<<find.clientAge<<endl
                     <<"Date Registered: "<<week_day<<" "<<month<<" "<<day<<" "<<year<<endl
                     <<"Time Registered: "<<time<<endl
                     <<"Address: "<<address<<endl<<endl;
@@ -71,7 +78,9 @@ void showClient::findClient(registerClient& find, string first_name, string last
                 else
                 {
                     cout<<"Name: "<<find.clientFirstName<<" "<<find.clientLastName<<endl
-                    <<"Number: "<<find.clientNumber<<endl
+                    <<"Number: "<<find.client_number<<endl
+                    <<"Sex: "<<find.clientSex<<endl
+                    <<"Age: "<<find.clientAge<<endl
                     <<"Date Registered: "<<week_day<<" "<<month<<" "<<day<<" "<<year<<endl
                     <<"Time Registered: "<<time<<endl
                     <<"Address: "<<address<<endl<<endl;

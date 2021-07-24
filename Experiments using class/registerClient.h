@@ -8,11 +8,12 @@ class registerClient
         void contactTracingQuestion();
         void writeClientAddress();
     public:
-        std::string clientFirstName, clientLastName;
-        std::string clientNumber,question,answer;
+        std::string clientFirstName, clientLastName,question,answer,client_number;
+        long long int clientNumber;
         char clientAddress[100];
-        int clientScore;
-        void clientDetails(std::string firstName, std::string lastName, std::string number);
+        int clientScore,clientAge;
+        char clientSex;
+        void clientDetails(std::string firstName, std::string lastName, long long int number, int age, char sex);
         friend class clientList;
 };
 

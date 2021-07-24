@@ -1,5 +1,6 @@
 #include <iostream>
 #include <Windows.h>
+#include <string>
 #include "registerClient.h"
 #include "clientList.h"
 
@@ -7,9 +8,10 @@ int main()
 {
     registerClient clientClass;
     showClient find_Client;
-    char address[100];
-    std::string firstName, lastName, phoneNumber;
-    int choice=0,choice2=0;
+    char address[100], clientSex;
+    std::string firstName, lastName;
+    long long int phoneNumber;
+    int choice=0,choice2=0, clientAge;
     while(choice!=99)
     {
         std::cout<<"[1]Register, [2]Find Person/Show Client List, [99]Exit"<<std::endl;
@@ -17,9 +19,21 @@ int main()
         system("cls");
         if(choice==1)
         {
-            std::cout<<"Enter first name, last name, and phone number:"<<std::endl;
-            std::cin>>firstName>>lastName>>phoneNumber;
-            clientClass.clientDetails(firstName,lastName,phoneNumber);
+            std::cout<<"Enter first name, last name and age"<<std::endl;
+            std::cin>>firstName>>lastName>>clientAge;
+            std::cout<<"Enter your phone number: +63 ";
+            std::cin>>phoneNumber;
+            do
+            {
+                std::cout<<"\nEnter 'M' for male or 'F' for female:"<<std::endl;
+                std::cin>>clientSex;
+                clientSex=toupper(clientSex);
+                if(clientSex!='M'&&clientSex!='F')
+                    std::cout<<"Invalid Input!"<<std::endl;
+                
+            } while (clientSex!='M'&&clientSex!='F');
+            
+            clientClass.clientDetails(firstName,lastName,phoneNumber,clientAge,clientSex);
         }
         else if(choice==2)
         {

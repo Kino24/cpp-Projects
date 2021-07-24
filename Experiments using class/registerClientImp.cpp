@@ -7,11 +7,13 @@
 
 using namespace std;
 
-void registerClient::clientDetails(string firstName, string lastName, string number)
+void registerClient::clientDetails(string firstName, string lastName, long long int number,int client_age, char client_sex)
 {
     clientFirstName=firstName;
     clientLastName=lastName;
     clientNumber=number;
+    clientAge=client_age;
+    clientSex=client_sex;
     registerClient::writeClientInformation();
 }
 
@@ -22,7 +24,7 @@ void registerClient::writeClientInformation()
     ofstream outFile("dataFile.dat",ios::app);
     registerClient::writeClientAddress();
     registerClient::contactTracingQuestion();
-    outFile<<clientFirstName<<" "<<clientLastName<<" "<<clientNumber<<" "<<clientScore<<" "<<dt;
+    outFile<<clientFirstName<<" "<<clientLastName<<" "<<"+63"<<clientNumber<<" "<<clientScore<<" "<<clientAge<<" "<<clientSex<<" "<<dt;
     outFile.close();
 }
 

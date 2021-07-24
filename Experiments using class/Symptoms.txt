@@ -1,3 +1,9 @@
 Fever
-Cough
-Breathing Difficulty
+Runny nose or sneezing
+Breathing Difficulty/Shortness of breath
+Sore Throat
+Body aches and pains
+Headache
+Nausea or vomiting
+Diarrhea
+Loss of sense of smell or taste

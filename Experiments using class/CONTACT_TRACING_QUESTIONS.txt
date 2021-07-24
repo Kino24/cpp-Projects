@@ -1,2 +1,5 @@
-Have you traveled outside the city in a span of two weeks?
-Have you come into contact with anyone who has traveled outside your country between the span of two weeks?
+Have you been previously diagnosed to be COVID POSITIVE?
+Did you come in close contact or staying in the same close environment with someone who has a confirmed COVID-19 case?
+Do you have any travel history in the past 14 days?
+Did you come in close contact with someone who is a suspected of COVID-19?
+Does anyone in the household or close contact manifest the symptoms and signs of COVID 19?
