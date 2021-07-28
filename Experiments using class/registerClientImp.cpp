@@ -22,10 +22,13 @@ void registerClient::writeClientInformation()
     time_t now = time(0);
     char* dt = ctime(&now);
     ofstream outFile("dataFile.dat",ios::app);
+    ofstream addressFile("ADDRESS_DATA.dat",ios::app);
     registerClient::writeClientAddress();
     registerClient::contactTracingQuestion();
     outFile<<clientFirstName<<" "<<clientLastName<<" "<<"+63"<<clientNumber<<" "<<clientScore<<" "<<clientAge<<" "<<clientSex<<" "<<dt;
+    addressFile<<clientAddress<<endl;
     outFile.close();
+    addressFile.close();
 }
 
 void registerClient::contactTracingQuestion()
@@ -107,9 +110,7 @@ void registerClient::contactTracingQuestion()
 
 void registerClient::writeClientAddress()
 {
-    ofstream addressData("ADDRESS_DATA.dat",ios::app);
     cin.ignore();
     cout<<"Enter Address: ";
     cin.getline(clientAddress, 99); cout<<endl;
-    addressData<<clientAddress<<endl;
 }

@@ -35,6 +35,8 @@ int main()
             transform(lastName.begin(),lastName.end(),lastName.begin(),::toupper);
             std::cout<<"Enter your phone number: +63 ";
             std::cin>>phoneNumber;
+            if(!phoneNumber)
+                std::cin>>phoneNumber;
             do
             {
                 std::cout<<"\nEnter 'M' for male or 'F' for female:"<<std::endl;
@@ -50,7 +52,6 @@ int main()
         else if(choice==2)
         {
             choice2=subMenu();
-            system("cls");
             if(choice2==1)
                 find_Client.showClientList(clientClass);
             else if(choice2==2)
@@ -122,10 +123,8 @@ int MAIN_MENU()
                 default:
                     break;
             }
-        if(key==13)
-            break;
-    } while (1);
-
+    } while (key!=13);
+    system("cls");
     return(menu);   
 }
 
@@ -183,9 +182,7 @@ int subMenu()
                 default:
                     break;
             }
-        if(key==13)
-            break;
-    } while (1);
-
+    } while (key!=13);
+    system("cls");
     return(menu);   
 }

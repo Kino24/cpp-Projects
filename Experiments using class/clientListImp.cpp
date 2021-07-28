@@ -45,7 +45,6 @@ void showClient::showClientList(registerClient& show)
             }
             cout<<endl;
         }
-            
     }
     clientInput.close();
     system("pause");
@@ -54,16 +53,22 @@ void showClient::showClientList(registerClient& show)
 
 void showClient::findClient(registerClient& find, string first_name, string last_name)
 {
+    system("cls");
+    int count=0;
+    bool clientFound=false;
     ifstream clientInput("dataFile.dat");
     ifstream clientAddress("ADDRESS_DATA.dat");
     while(clientInput.good()&&clientAddress.good())
     {
-        clientInput>>find.clientFirstName>>find.clientLastName>>find.client_number>>find.clientScore>>find.clientAge>>find.clientSex>>week_day>>month>>day>>time>>year;
-        getline(clientAddress, address);
+        do
+        {
+            clientInput>>find.clientFirstName>>find.clientLastName>>find.client_number>>find.clientScore>>find.clientAge>>find.clientSex>>week_day>>month>>day>>time>>year;
+            getline(clientAddress, address);
+        }while((find.clientFirstName!=first_name&&find.clientLastName!=last_name)&&(clientInput.good()&&clientAddress.good()));
         if(find.clientFirstName==first_name&&find.clientLastName==last_name)
         {
-            system("cls");
-            if(find.clientScore>5)
+            clientFound=true;
+            if(find.clientScore>5&&(clientInput.good()&&clientAddress.good()))
                 {
                     SetConsoleTextAttribute(hConsole, 12);
                     cout<<"Name: "<<find.clientFirstName<<" "<<find.clientLastName<<endl
@@ -75,7 +80,7 @@ void showClient::findClient(registerClient& find, string first_name, string last
                     <<"Address: "<<address<<endl<<endl;
                     SetConsoleTextAttribute(hConsole, 7);
                 }
-                else
+                else if (clientInput.good()&&clientAddress.good())
                 {
                     cout<<"Name: "<<find.clientFirstName<<" "<<find.clientLastName<<endl
                     <<"Number: "<<find.client_number<<endl
@@ -86,9 +91,8 @@ void showClient::findClient(registerClient& find, string first_name, string last
                     <<"Address: "<<address<<endl<<endl;
                 }
         }
-        
     }
-    if(find.clientFirstName!=first_name&&find.clientLastName!=last_name)
+    if(!clientFound)
     {
         cout<<"Person not found"<<endl;
     }
