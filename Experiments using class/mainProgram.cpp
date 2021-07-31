@@ -85,7 +85,7 @@ int MAIN_MENU()
         if(menu==1)
             {
                 system("cls");
-                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to select choice."<<std::endl;
+                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to proceed."<<std::endl;
                 SetConsoleTextAttribute(hConsole,112);
                 std::cout<<"[1]Register Client"<<std::endl;
                 SetConsoleTextAttribute(hConsole,7);
@@ -95,7 +95,7 @@ int MAIN_MENU()
         else if(menu==2)
             {
                 system("cls");
-                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to select choice."<<std::endl;
+                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to proceed."<<std::endl;
                 std::cout<<"[1]Register Client"<<std::endl;
                 SetConsoleTextAttribute(hConsole,112);
                 std::cout<<"[2]Client List"<<std::endl;
@@ -105,7 +105,7 @@ int MAIN_MENU()
         else if(menu==3)
             {
                 system("cls");
-                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to select choice."<<std::endl;
+                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to proceed."<<std::endl;
                 std::cout<<"[1]Register Client"<<std::endl;
                 std::cout<<"[2]Client List"<<std::endl;
                 SetConsoleTextAttribute(hConsole,112);
@@ -144,7 +144,7 @@ int subMenu()
         if(menu==1)
             {
                 system("cls");
-                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to select choice."<<std::endl;
+                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to proceed."<<std::endl;
                 SetConsoleTextAttribute(hConsole,112);
                 std::cout<<"[1]Show Registrant List"<<std::endl;
                 SetConsoleTextAttribute(hConsole,7);
@@ -154,7 +154,7 @@ int subMenu()
         else if(menu==2)
             {
                 system("cls");
-                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to select choice."<<std::endl;
+                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to proceed."<<std::endl;
                 std::cout<<"[1]Show Registrant List"<<std::endl;
                 SetConsoleTextAttribute(hConsole,112);
                 std::cout<<"[2]Find Registrant"<<std::endl;
@@ -164,7 +164,7 @@ int subMenu()
         else if(menu==3)
             {
                 system("cls");
-                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to select choice."<<std::endl;
+                std::cout<<"Navigate with 'UP' and 'DOWN' arrow keys. Press 'ENTER' to proceed."<<std::endl;
                 std::cout<<"[1]Show Registrant List"<<std::endl;
                 std::cout<<"[2]Find Registrant"<<std::endl;
                 SetConsoleTextAttribute(hConsole,112);
